@@ -1,0 +1,39 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run SQLite Command",
+			"type": "pwa-node",
+			"request": "launch",
+			"runtimeExecutable": "${env:ComSpec}",
+			"runtimeArgs": [
+				"/c",
+				"sqlite3.exe :memory: -init main.sql"
+			],
+			"windows": {
+				"runtimeExecutable": "powershell.exe",
+				"runtimeArgs": [
+				  "-Command",
+				  "sqlite3.exe :memory: -init main.sql"
+				]
+			  },
+			"osx": {
+				"runtimeExecutable": "/bin/bash",
+				"runtimeArgs": [
+					"-c",
+					"/usr/bin/sqlite3 :memory: \".read '${workspaceFolder}/main.sql'\""
+				]
+			},
+			"linux": {
+				"runtimeExecutable": "/bin/bash",
+				"runtimeArgs": [
+					"-c",
+					"/usr/bin/sqlite3 :memory: \".read '${workspaceFolder}/main.sql'\""
+				]
+			},
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		}
+	]
+}
+
