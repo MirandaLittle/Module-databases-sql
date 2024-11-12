@@ -20,3 +20,6 @@ UPDATE doctors
 --that it worked
 SELECT location, period, rating 
 FROM doctors;
+
+--Schema
+.schema schema.sql
